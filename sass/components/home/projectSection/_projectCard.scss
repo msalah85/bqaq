@@ -1,0 +1,57 @@
+.projectCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all ease-in-out 0.2s;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  border-radius: 0.8rem;
+
+  &:hover {
+    background-color: rgb(250, 250, 250);
+  }
+
+  &__imgCont {
+    width: 25%;
+    height: 9rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border: 1px solid #bcbcbc;
+    border-radius: 0.8rem;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &__projectDetails {
+    width: 75%;
+    padding: 0.3rem 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      font-size: $Font2;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &__description {
+      margin-top: 0.5rem;
+      font-size: $Font2;
+      font-weight: 400;
+      color: #959595;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.sheikhDetails {
+  display: flex;
+
+  margin: 6rem 0rem;
+  & > * + * {
+    margin-right: 2rem;
+  }
+  &__rightSec {
+    border: 1px solid #707070;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    width: 25rem;
+    height: 20rem;
+    font-size: 1.4rem;
+    @media (max-width: 901px) {
+      width: 15rem;
+      height: 15rem;
+    }
+  }
+
+  &__leftSec {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 40%;
+    @media (max-width: 901px) {
+      width: fit-content;
+    }
+    &__title {
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+
+    &__desc {
+      font-size: 1.4rem;
+    }
+
+    a {
+      width: 35%;
+    }
+    &__buttons {
+      display: flex;
+      & > * + * {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+}

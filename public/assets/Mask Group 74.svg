@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_147609" data-name="Rectangle 147609" width="48" height="48" transform="translate(287 3213)" fill="#b18c3c" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_74" data-name="Mask Group 74" transform="translate(-287 -3213)" clip-path="url(#clip-path)" style="isolation: isolate">
+    <g id="Smock_Visibility_18_N" transform="translate(287 3213)">
+      <rect id="Canvas" width="48" height="48" fill="#b18c3c" opacity="0"/>
+      <path id="Path_83206" data-name="Path 83206" d="M32.817,11.44A19.962,19.962,0,0,0,24,9.249c-11.552,0-21,11.5-21,15.231,0,4,9.944,14.267,20.915,14.267C34.981,38.747,45,28.472,45,24.48,45,21.333,39.381,14.692,32.817,11.44ZM24,36.3A12.3,12.3,0,1,1,36.3,24,12.3,12.3,0,0,1,24,36.3Z" fill="#b18c3c"/>
+      <path id="Path_83207" data-name="Path 83207" d="M27.556,24.111A3.556,3.556,0,0,1,24,20.556a3.509,3.509,0,0,1,1.8-3.027,6.586,6.586,0,0,0-1.8-.279A6.751,6.751,0,1,0,30.751,24h0a6.285,6.285,0,0,0-.233-1.6A3.5,3.5,0,0,1,27.556,24.111Z" fill="#b18c3c"/>
+    </g>
+  </g>
+</svg>

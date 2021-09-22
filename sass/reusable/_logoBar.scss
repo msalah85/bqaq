@@ -1,0 +1,35 @@
+.logoBar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0rem;
+
+  &__rightSection {
+    display: flex;
+    align-items: center;
+
+    &__logo {
+      width: 7rem;
+      height: 7rem;
+      align-self: flex-start;
+    }
+
+    &__textLogo {
+      width: 100%;
+      height: 5rem;
+      margin-right: 2rem;
+    }
+  }
+
+  &__leftSection {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 15rem;
+      height: 7rem;
+    }
+  }
+  @media (max-width: 901px) {
+    display: none;
+  }
+}

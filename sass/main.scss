@@ -1,0 +1,142 @@
+// @import "antd/lib/select/style";
+@import "base/variables";
+@import "base/base";
+@import "base/animations";
+
+//reusable
+@import "reusable/container";
+@import "reusable/popup";
+@import "reusable/input";
+@import "reusable/button";
+@import "reusable/navbar.scss";
+@import "reusable/logoBar";
+@import "reusable/tabsBar";
+@import "reusable/carouselBar";
+@import "reusable/footer";
+@import "reusable/routesBar";
+@import "reusable/shareWithSection";
+@import "reusable/dropDown";
+@import "reusable/sidebar";
+@import "reusable/detailsCard";
+@import "reusable/sliderSidebar";
+@import "reusable/floatingShare";
+@import "reusable/fullPageSpinner.scss";
+@import "reusable/spinner.scss";
+
+//components
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<SignIn Form>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+@import "components/signIn_signUp_form/signInForm";
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<HOME>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//news section
+@import "components/home/newsSection/newsSection";
+@import "components/home/newsSection/newCard";
+
+//sections bar section
+@import "components/home/sectionBar/sectionBar";
+
+//project section
+@import "components/home/projectSection/projectSection";
+@import "components/home/projectSection/projectCard";
+
+//broadcast section
+@import "components/home/broadcastSection/broadcastSection";
+@import "components/home/broadcastSection/broadcastCard";
+
+//our scientist section
+@import "components/home/ourScientistSection/ourScientistSection";
+@import "components/home/ourScientistSection/ourScientistCard";
+
+//new audio section
+@import "components/home/newAudioSection/newAudioSection";
+
+//new video section
+@import "components/home/newVideoSection/newVideoSection";
+@import "components/home/newVideoSection/newVideoCard";
+
+//charity number section
+@import "components/home/charityNumbersSection/charityNumbersSection";
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<WHO WE ARE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+@import "components/whoWeAre/whoWeAre";
+@import "components/whoWeAre/whoWeAreSidebar";
+@import "components/whoWeAre/whoWeAreDetails";
+@import "components/whoWeAre/scientistPraisePage/scientistPraise";
+@import "components/whoWeAre/scientistPraisePage/scientistPraiseCard";
+@import "components/whoWeAre/scientistPraisePage/scientistPraiseDetails/scientistPraiseDetails";
+@import "components/whoWeAre/scientistPraisePage/scientistPraiseDetails/scientistPraiseDetailsSidebar";
+@import "components/whoWeAre/scientistPraisePage/scientistPraiseDetails/ScientistPraiseDetailsSec";
+@import "components/managementStructure/managementStructure";
+@import "components/managementStructure/personCard";
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<OUR PROJECTS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+@import "components/ourProjects/ourProjects";
+@import "components/ourProjects/ourProjectsDetails";
+@import "components/ourProjects/ourProjectsSidebar";
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<LESSONS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+@import "components/lessons/lessons";
+@import "components/lessons/lessonsDetails";
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<SHIEKHS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+@import "components/sheikhs/sheikhs";
+@import "components/sheikhs/SheikhsDetails";
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<LESSON DETAILS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+@import "components/lessonDetails/lessonDetailsSection";
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<EL GALIAT>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+@import "components/el-galiat/el-galiat";
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<VIDEOS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+@import "components/videos/videoDetails";
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<BOOKSTORE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+@import "components/bookstore/bookstoreDetails";
+@import "components/bookstore/bookcard";
+@import "components/bookstore/bookDetails";
+@import "components/bookstore/bookSidebar";
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<WOMEN SECTION>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+@import "components/womenSection/womenSecDetails";
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<MEDIA CENTER>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+@import "components/mediaCenter/newsSection";
+@import "components/mediaCenter/imagesSection";
+@import "components/mediaCenter/newDetails";
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<ANTI-TERRORISM>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+@import "components/anti-terrorism/audioInfoCenterDetails";
+@import "components/anti-terrorism/suspicionDetails";
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<CONTACT US>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+@import "components/contactUs/contactUs";
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<DONNATION>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+@import "components/donnation/donnationDetails";
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Dashboard>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+@import "components/dashboard/authorization";
+@import "components/dashboard/logoBar";
+@import "components/dashboard/dashboardMainPage";
+
+/////////////////////////////Dashbpard///////////////////////////Dashboard/////////////////////Dashboard/////////////////////////
+@import "reusable/dashboard/dashboardCard";
+
+@import "components/dashboard/sections/whoWeAre";
+@import "components/dashboard/sections/ourProject";

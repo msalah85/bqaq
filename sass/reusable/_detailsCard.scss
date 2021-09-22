@@ -1,0 +1,78 @@
+.detailsCard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  & > * + * {
+    margin-bottom: 0.5rem;
+  }
+  &__imgCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 25rem;
+    // padding: 5rem;
+    border: 1px solid #707070;
+    border-radius: 0.8rem;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  &__vidCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #707070;
+    border-radius: 0.8rem;
+
+    iframe {
+      display: flex;
+    }
+
+    video {
+      width: unset !important;
+      height: unset !important;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  &__title {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 901px) {
+      flex-direction: column;
+    }
+    &__date {
+      font-size: $Font2;
+      color: #959595;
+      @media (max-width: 901px) {
+        align-self: flex-start;
+      }
+    }
+    &__shareSec {
+      display: flex;
+      align-items: center;
+      @media (max-width: 901px) {
+        margin-top: 2rem;
+        align-self: flex-end;
+      }
+      & > * + * {
+        margin-right: 1rem;
+      }
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+}

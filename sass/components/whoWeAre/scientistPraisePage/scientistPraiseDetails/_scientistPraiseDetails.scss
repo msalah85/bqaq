@@ -1,0 +1,19 @@
+.scientistPraiseDetails {
+  display: grid;
+  grid-template-columns: 30% 65%;
+  // grid-template-rows: 1fr;
+  grid-column-gap: 3%;
+  height: 100%;
+  margin-bottom: 2rem;
+
+  @media (max-width: 901px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__shareWithSection {
+    @media (max-width: 901px) {
+      order: -1;
+    }
+  }
+}

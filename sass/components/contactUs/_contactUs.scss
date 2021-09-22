@@ -1,0 +1,23 @@
+.contactUs {
+  display: flex;
+  justify-content: space-between;
+  & > * + * {
+    margin: 10rem 0;
+  }
+  input {
+    width: 100%;
+  }
+  button {
+    width: 100%;
+    margin: 1rem 0;
+    @media (max-width: 901px) {
+      margin-top: 1.5rem;
+    }
+  }
+  @media (max-width: 901px) {
+    flex-direction: column;
+    & > * + * {
+      margin: 2rem 0;
+    }
+  }
+}

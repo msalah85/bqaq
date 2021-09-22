@@ -1,0 +1,72 @@
+.ourProjectSidebar {
+  display: flex;
+  flex-direction: column;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+  height: fit-content;
+
+  &__switchBtn {
+    display: flex;
+
+    &__btn {
+      width: 100%;
+      height: 39px;
+      /* padding: 1rem 3rem; */
+      background-color: #f3f3f3;
+      font-size: $Font2;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        color: #277f66;
+      }
+    }
+  }
+
+  &__contents {
+    &__title {
+      margin: 2rem 0;
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+    // &__itemsCont {
+    //     height: 29rem;
+    //     overflow: auto;
+    // }
+    &__item {
+      padding: 1.2rem;
+      border: 1px solid #e1e1e1;
+      border-radius: 0.8rem;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      font-weight: 500;
+      background: linear-gradient(to left, #b18c3c 10%, transparent 0%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background ease-in-out 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #b18c3c;
+        // cursor: initial;
+        color: white;
+      }
+    }
+  }
+}
+
+// .activeSwitchBtn {
+//   background: #d3e5e0;
+//   color: #277f66;
+// }
+
+// .activeItem {
+//   background-color: #b18c3c;
+//   cursor: initial;
+//   color: white;
+// }

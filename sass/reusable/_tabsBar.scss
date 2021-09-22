@@ -1,0 +1,61 @@
+.navTabs {
+  width: 100%;
+  background-color: #195f30;
+  position: sticky;
+  top: -1px;
+  z-index: 5;
+  &__body {
+    display: flex;
+    justify-content: space-between;
+
+    &__item {
+      color: white;
+      padding: 1rem 0.5rem;
+      // width: 100%;
+      font-size: $Font3;
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      transition: all ease-in-out 0.2s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #457555;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      height: 0.6rem;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #888;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #f1f1f1;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: white;
+    }
+  }
+}
+
+@media (max-width: 901px) {
+  .navTabs__body {
+    width: 100%;
+    overflow: auto;
+    &__item {
+      padding: 1rem 1.5rem;
+      flex: none;
+    }
+  }
+}
+
+.activeTab {
+  border-bottom: 4px solid white;
+}

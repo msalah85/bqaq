@@ -1,0 +1,32 @@
+.sections {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 22%);
+  grid-gap: 4%;
+  max-height: 35rem;
+  overflow: hidden;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.8rem;
+    border: 1px solid #bcbcbc;
+    padding: 1.8rem;
+    cursor: pointer;
+    transition: all ease-in-out 0.21s;
+    &:hover {
+      background-color: #f8f8f8d8;
+    }
+    &__title {
+      margin: 1.7rem 0rem 0rem 0rem;
+      font-size: $Font3;
+      font-weight: 800;
+    }
+  }
+  @media (max-width: 901px) {
+    grid-template-columns: repeat(2, 48%);
+    grid-row-gap: 3rem;
+    max-height: fit-content;
+  }
+}

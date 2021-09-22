@@ -1,0 +1,68 @@
+.audioInfoCenterDetails {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  &__navbar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+    & > * + * {
+      margin-right: 2.5rem;
+    }
+    &__item {
+      width: 9%;
+      padding: 0.8rem 0;
+      text-align: center;
+      border: 1px solid #e1e1e1;
+      border-radius: 0 2rem 0 2rem;
+      font-size: $Font2;
+      font-weight: 500;
+      color: #959595;
+      transition: background ease-in-out 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        background: #b18c3c;
+        color: white;
+      }
+    }
+  }
+  &__audiosCont {
+    display: flex;
+    flex-direction: column;
+    & > * + * {
+      margin-top: 2rem;
+    }
+    &__audio {
+      padding: 0rem 2rem 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #eaeaea;
+      &__rightSec {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        & > * + * {
+          margin-right: 1rem;
+        }
+        img {
+          cursor: pointer;
+        }
+      }
+      &__leftSec {
+        display: flex;
+        align-items: center;
+        & > * + * {
+          margin-right: 2rem;
+        }
+        img {
+          cursor: pointer;
+        }
+      }
+      @media (max-width: 901px) {
+        flex-direction: column;
+      }
+    }
+  }
+}

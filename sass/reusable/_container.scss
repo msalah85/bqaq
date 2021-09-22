@@ -1,0 +1,27 @@
+.general-container {
+  width: 80%;
+  margin: 0 auto;
+
+  @media (max-width: 1800px) {
+    width: 90%;
+  }
+
+  @media (max-width: 1366px) {
+    width: 92.5%;
+  }
+
+  @media (max-width: 900px) {
+    width: 90%;
+  }
+
+  @media (max-width: 540px) {
+    width: 95%;
+  }
+}
+
+.barsContainer {
+  // min-height: 100vh;
+  @media (max-width: 901px) {
+    min-height: auto;
+  }
+}

@@ -1,0 +1,14 @@
+.lessons {
+  display: grid;
+  grid-template-columns: 18% 78%;
+  // grid-template-rows: 1fr;
+  grid-column-gap: 4%;
+  height: 100%;
+  margin-bottom: 4rem;
+  // &__sidebar {
+
+  // }
+  @media (max-width: 901px) {
+    display: block;
+  }
+}

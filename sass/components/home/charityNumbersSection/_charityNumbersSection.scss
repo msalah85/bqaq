@@ -1,0 +1,41 @@
+.charityNumbersSection {
+  margin: 5rem 0rem;
+  display: grid;
+  grid-template-columns: repeat(4, 15%);
+  grid-gap: 4%;
+  max-height: 35rem;
+  overflow: hidden;
+  justify-content: center;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.8rem;
+    border: 1px solid #bcbcbc;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all ease-in-out 0.21s;
+
+    &:hover {
+      background-color: #f8f8f8d8;
+    }
+
+    &__title {
+      margin: 1rem 0rem 0rem 0rem;
+      font-size: $Font3;
+      font-weight: 500;
+    }
+
+    &__number {
+      margin-top: 0.3rem;
+      font-size: 2.2rem;
+      font-weight: bold;
+    }
+  }
+  @media (max-width: 901px) {
+    grid-template-columns: repeat(2, 48%);
+    grid-row-gap: 3rem;
+  }
+}

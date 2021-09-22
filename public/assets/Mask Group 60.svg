@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="17" viewBox="0 0 17 17">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_147566" data-name="Rectangle 147566" width="17" height="17" transform="translate(691 442)" fill="#959595" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_60" data-name="Mask Group 60" transform="translate(-691 -442)" clip-path="url(#clip-path)" style="isolation: isolate">
+    <g id="share" transform="translate(691 442)">
+      <g id="Group_160773" data-name="Group 160773">
+        <g id="Group_160772" data-name="Group 160772">
+          <path id="Path_83174" data-name="Path 83174" d="M4.25,5.8a2.8,2.8,0,1,0,2.8,2.8A2.8,2.8,0,0,0,4.25,5.8Zm0,4.354A1.555,1.555,0,1,1,5.8,8.6,1.557,1.557,0,0,1,4.25,10.159Z" fill="#959595"/>
+        </g>
+      </g>
+      <g id="Group_160775" data-name="Group 160775">
+        <g id="Group_160774" data-name="Group 160774">
+          <path id="Path_83175" data-name="Path 83175" d="M12.75,0a2.8,2.8,0,1,0,2.8,2.8A2.8,2.8,0,0,0,12.75,0Zm0,4.354A1.555,1.555,0,1,1,14.3,2.8,1.556,1.556,0,0,1,12.75,4.354Z" fill="#959595"/>
+        </g>
+      </g>
+      <g id="Group_160777" data-name="Group 160777">
+        <g id="Group_160776" data-name="Group 160776">
+          <path id="Path_83176" data-name="Path 83176" d="M12.75,11.4a2.8,2.8,0,1,0,2.8,2.8A2.8,2.8,0,0,0,12.75,11.4Zm0,4.354A1.555,1.555,0,1,1,14.3,14.2,1.556,1.556,0,0,1,12.75,15.756Z" fill="#959595"/>
+        </g>
+      </g>
+      <g id="Group_160779" data-name="Group 160779">
+        <g id="Group_160778" data-name="Group 160778">
+          <rect id="Rectangle_147568" data-name="Rectangle 147568" width="6.222" height="1.244" transform="translate(5.654 6.984) rotate(-32.894)" fill="#959595"/>
+        </g>
+      </g>
+      <g id="Group_160781" data-name="Group 160781">
+        <g id="Group_160780" data-name="Group 160780">
+          <rect id="Rectangle_147569" data-name="Rectangle 147569" width="1.244" height="6.055" transform="translate(5.652 10.287) rotate(-57.016)" fill="#959595"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

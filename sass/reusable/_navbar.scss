@@ -1,0 +1,243 @@
+.bottomBorder {
+  border-bottom: 2px solid #eaeaea;
+}
+
+.navbar {
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 50px;
+  grid-row-gap: 0px;
+  padding: 1.3rem 0rem;
+
+  &__userContainer {
+    grid-area: 1 / 1 / 2 / 2;
+
+    svg {
+      fill: #959595;
+      width: 2rem;
+      height: 2rem;
+    }
+
+    &__loginBtn {
+      display: flex;
+      align-items: center;
+      font-size: 1.4rem;
+      color: #959595;
+      width: 11rem;
+
+      span {
+        margin-right: 0.7rem;
+      }
+    }
+
+    &__loggedInUser {
+      // svg {
+      //   width: 3rem;
+      // }
+      width: fit-content !important;
+      display: flex;
+      align-items: center;
+      font-size: 1.4rem;
+      color: #959595;
+
+      & > * + * {
+        margin-right: 0.8rem;
+      }
+    }
+
+    &__dropdown {
+      position: absolute;
+      z-index: 6;
+      background-color: white;
+      padding: 0.8rem 1.5rem;
+      margin-top: 1rem;
+      border: 1px solid #d3d3d3;
+      border-radius: 0.3rem;
+      box-shadow: 0px 0px 4px rgba(171, 166, 166, 0.9);
+      top: 4rem;
+
+      // &:hover {
+      //   display: block;
+      // }
+
+      & > * + * {
+        margin-top: 0.7rem;
+      }
+
+      &__item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: $Font3;
+        font-weight: 500;
+        color: #959595;
+        cursor: pointer;
+
+        & > * + * {
+          margin-right: 0.5rem;
+        }
+
+        &:last-child {
+          margin-top: 2rem;
+          color: #ff0000;
+        }
+
+        svg {
+          fill: #959595;
+          width: auto;
+          height: auto;
+        }
+      }
+    }
+
+    // &:hover &__dropdown {
+    //   display: block;
+    // }
+  }
+
+  &__searchBar {
+    display: flex;
+    align-items: center;
+    grid-area: 1 / 2 / 2 / 3;
+
+    input {
+      width: 100%;
+      padding: 0.7rem 3.5rem;
+      background-color: transparent;
+      z-index: 2;
+    }
+
+    svg {
+      z-index: 1;
+      width: 1.8rem;
+      height: 1.8rem;
+      fill: #959595;
+      position: absolute;
+      margin-right: 1rem;
+    }
+
+    @media (max-width: 901px) {
+      width: 70%;
+      align-self: center;
+      margin-top: 1.5rem;
+    }
+  }
+
+  &__socials {
+    direction: ltr;
+    display: flex;
+    align-items: center;
+    grid-area: 1 / 3 / 2 / 4;
+
+    &__socialItem {
+      // padding: 0.5rem;
+      border: 1px solid #d3d3d3;
+      border-radius: 0.7rem;
+      display: flex;
+      align-items: center;
+      margin-right: 1rem;
+      cursor: pointer;
+      transition: all ease-in-out 0.2s;
+      width: 3rem;
+      overflow: hidden;
+      &:hover {
+        background-color: rgb(248, 248, 248);
+      }
+
+      svg {
+        width: 100%;
+        // fill: #747474;
+        height: 100%;
+      }
+
+      &__svg {
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.7rem;
+        margin-right: 1rem;
+        border: 1px solid #d3d3d3;
+        cursor: pointer;
+        transition: all ease-in-out 0.2s;
+        svg {
+          fill: white;
+          width: 1.7rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 901px) {
+    display: none;
+  }
+}
+.instaBg {
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+}
+.sm-screen-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.3rem 1rem;
+
+  &__rightSec {
+    display: flex;
+    align-items: center;
+
+    & > * + * {
+      margin-right: 2rem;
+    }
+
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  &__leftSec {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+
+    // gap: 2rem;
+    & > * + * {
+      margin-right: 0.5rem;
+    }
+    &__logoSVG {
+      overflow: hidden;
+
+      img {
+        width: 5rem;
+        height: 5rem;
+      }
+    }
+
+    &__TextLogoSVG {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (min-width: 902px) {
+    display: none;
+  }
+}

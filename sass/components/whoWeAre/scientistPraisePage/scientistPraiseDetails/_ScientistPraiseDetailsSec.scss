@@ -1,0 +1,47 @@
+.ScientistPraiseDetailsSec {
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  //   gap: 2rem;
+  & > * + * {
+    margin-top: 2rem;
+  }
+  &__details {
+    font-size: 1.4rem;
+    // font-weight: 500;
+    line-height: 2;
+    text-align: justify;
+  }
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 32%);
+    grid-column-gap: 2%;
+    grid-row-gap: 3rem;
+
+    &__imgCont {
+      border: 1px solid #707070;
+      border-radius: 0.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 20rem;
+      max-width: 100%;
+      width: 30rem;
+      overflow: hidden;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    @media (max-width: 901px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      & > * + * {
+        margin-top: 2rem;
+      }
+    }
+  }
+}

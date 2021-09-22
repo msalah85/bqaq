@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="56" height="56" viewBox="0 0 56 56">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1" data-name="Rectangle 1" width="16" height="16" fill="#747474"/>
+    </clipPath>
+  </defs>
+  <g id="Group_161436" data-name="Group 161436" transform="translate(-92 -12)" style="isolation: isolate">
+    <rect id="Background" width="56" height="56" rx="5" transform="translate(92 12)" fill="red"/>
+    <g id="Mask_Group_106" data-name="Mask Group 106" transform="translate(112 32)" clip-path="url(#clip-path)">
+      <g id="youtube" transform="translate(0 2.399)">
+        <path id="Path_88772" data-name="Path 88772" d="M15.67,1.753A2,2,0,0,0,14.26.343,46.823,46.823,0,0,0,8,0,48.658,48.658,0,0,0,1.74.33,2.046,2.046,0,0,0,.329,1.753,21.123,21.123,0,0,0,0,5.6,21.045,21.045,0,0,0,.329,9.45a2,2,0,0,0,1.41,1.41A46.921,46.921,0,0,0,8,11.2a48.658,48.658,0,0,0,6.26-.33,2,2,0,0,0,1.41-1.41A21.123,21.123,0,0,0,16,5.614a20.049,20.049,0,0,0-.33-3.862Zm0,0" transform="translate(0 0)" fill="#fff"/>
+        <path id="Path_88773" data-name="Path 88773" d="M6.405,8,10.57,5.6,6.405,3.2Zm0,0" transform="translate(0 0)" fill="red"/>
+      </g>
+    </g>
+  </g>
+</svg>

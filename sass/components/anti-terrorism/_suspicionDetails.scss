@@ -1,0 +1,77 @@
+.suspicionDetails {
+  margin-top: 5rem;
+  &__navbar {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+    &__item {
+      width: 9%;
+      padding: 0.8rem 0;
+      text-align: center;
+      border: 1px solid #e1e1e1;
+      border-radius: 0 2rem 0 2rem;
+      font-size: $Font2;
+      font-weight: 500;
+      color: #959595;
+      transition: background ease-in-out 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        background: #b18c3c;
+        color: white;
+      }
+    }
+  }
+
+  &__gridCont {
+    margin: 4rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 4rem;
+    grid-row-gap: 3rem;
+    overflow: hidden;
+  }
+
+  &__audiosCont {
+    display: flex;
+    flex-direction: column;
+    margin-top: 7rem;
+    gap: 2rem;
+    &__audio {
+      padding: 1rem 2rem 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #eaeaea;
+      border-top: 2px solid #eaeaea;
+      &__rightSec {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 1rem;
+        img {
+          cursor: pointer;
+        }
+      }
+      &__leftSec {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        img {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  &__title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 3rem 0 1rem 0;
+  }
+  &__details {
+    font-size: 1.4rem;
+    line-height: 2;
+  }
+}

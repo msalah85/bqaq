@@ -1,0 +1,33 @@
+.news {
+  margin-top: 2rem;
+
+  &__title {
+    color: #277f66;
+    font-size: 1.8rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__moreBtn {
+      color: #bcbcbc;
+      font-size: 1.5rem;
+      cursor: pointer;
+      &:hover {
+        text-shadow: 1px 1px 4px #dadada;
+      }
+    }
+  }
+
+  &__container {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 22%);
+    grid-gap: 4%;
+    overflow: hidden;
+    @media (max-width: 901px) {
+      grid-template-columns: repeat(2, 48%);
+      grid-row-gap: 3rem;
+    }
+  }
+}

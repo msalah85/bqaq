@@ -1,0 +1,135 @@
+.toastNotificationHome {
+    // height: auto;
+    position: fixed;
+    z-index: 2000;
+    right: 0;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: auto;
+    overflow: hidden;
+}
+
+
+.success {
+    background-color: #cff5f2 !important;
+    color: #0a7c71 !important;
+}
+
+.error {
+    background-color: #fddddd !important;
+    color: #933432 !important;
+
+}
+
+.warning {
+    background-color: #fef6dd !important;
+    color: #957d32 !important;
+}
+
+.info {
+    background-color: #daeffd !important;
+    color: #2b6a94 !important;
+}
+
+.toastNotificationBody {
+    transition: 0.25s all ease-in-out;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    z-index: 2000;
+    height: 60px;
+    width: 60px;
+    border-radius: 35px;
+    background-color: #daeffd;
+    color: #2b6a94;
+    float: left;
+    overflow: hidden;
+    animation: stretchingAnimation 1s ease-out 0.7s 1 normal forwards, slideInAnimation 0.3s ease-out 0s 1 normal forwards, slideOutAnimation 0.3s ease-out 7s 1 normal forwards;
+    cursor: pointer;
+
+    &:hover {
+        animation-play-state: running, running, paused;
+    }
+
+    &__imgCont {
+        height: 100%;
+        border-radius: 50%;
+        // background-color: rgb(206, 206, 206);
+        padding: 8px;
+    }
+
+    &__notiBodyContainer {
+        width: 80%;
+        overflow: hidden;
+        margin-left: 7px;
+        display: flex;
+        flex-direction: column;
+
+        &__notiBody {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        &__notiHeader {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &__closeBtn {
+        height: 100%;
+        padding: 15px;
+        cursor: pointer;
+    }
+}
+
+@keyframes stretchingAnimation {
+    from {
+
+        border-radius: 35px;
+        height: 60px;
+        width: 60px;
+        min-width: 60px;
+    }
+
+    to {
+        width: 18%;
+        max-width: 340px;
+        min-width: 300px;
+        height: 60px;
+    }
+}
+
+@keyframes slideInAnimation {
+    from {
+        transform: translateX(150%);
+
+        .toastNotificationBody__closeBtn {
+            display: none;
+        }
+    }
+
+    to {
+        transform: translateX(0%);
+
+        .toastNotificationBody__closeBtn {
+            display: block;
+        }
+    }
+}
+
+@keyframes slideOutAnimation {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(150%);
+    }
+}

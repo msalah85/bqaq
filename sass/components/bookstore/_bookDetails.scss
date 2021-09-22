@@ -1,0 +1,36 @@
+.bookDetails {
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  & > * + * {
+    margin-top: 2rem;
+  }
+  &__infoBar {
+    display: flex;
+    & > * + * {
+      margin-right: 1rem;
+    }
+    &__downloadSec {
+      flex: 0 0 15%;
+      background-color: #d3e5e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #277f66;
+      cursor: pointer;
+      width: 100%;
+      padding: 1rem 2rem;
+      border-radius: 1rem;
+      font-size: $Font2;
+      font-weight: 500;
+      & > * + * {
+        margin-right: 0.8rem;
+      }
+    }
+  }
+  &__details {
+    font-size: 1.4rem;
+    line-height: 2;
+    text-align: justify;
+  }
+}

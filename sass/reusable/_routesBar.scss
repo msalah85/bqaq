@@ -1,0 +1,33 @@
+.routesbar {
+  margin: 2rem 0;
+  display: flex;
+  gap: 1rem;
+  font-size: $Font2;
+  font-weight: 500;
+  color: #707070;
+  flex-wrap: wrap;
+  &__routeCont {
+    display: flex;
+    gap: 1rem;
+
+    &__route {
+      display: flex;
+      gap: 1rem;
+
+      &:hover {
+        color: #277f66;
+      }
+
+      &:last-child {
+        pointer-events: none;
+
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+  @media (max-width: 901px) {
+    order: 1;
+  }
+}

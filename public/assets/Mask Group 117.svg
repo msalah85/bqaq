@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_147654" data-name="Rectangle 147654" width="24" height="24" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_117" data-name="Mask Group 117" clip-path="url(#clip-path)">
+    <g id="Who_are_we" data-name="Who are we">
+      <g id="Group_10701" data-name="Group 10701">
+        <g id="Group_10700" data-name="Group 10700">
+          <path id="Path_88769" data-name="Path 88769" d="M12,0A12,12,0,1,0,24,12,11.993,11.993,0,0,0,12,0Zm0,22.125A10.125,10.125,0,1,1,22.125,12,10.119,10.119,0,0,1,12,22.125Z"/>
+        </g>
+      </g>
+      <g id="Group_10703" data-name="Group 10703" transform="translate(11.063 10.047)">
+        <g id="Group_10702" data-name="Group 10702">
+          <path id="Path_88770" data-name="Path 88770" d="M12,10.047a.937.937,0,0,0-.937.938v6.037a.938.938,0,1,0,1.875,0V10.984A.937.937,0,0,0,12,10.047Z" transform="translate(-11.063 -10.047)"/>
+        </g>
+      </g>
+      <g id="Group_10705" data-name="Group 10705" transform="translate(10.734 6.367)">
+        <g id="Group_10704" data-name="Group 10704">
+          <circle id="Ellipse_3" data-name="Ellipse 3" cx="1.266" cy="1.266" r="1.266"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

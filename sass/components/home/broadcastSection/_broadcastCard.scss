@@ -1,0 +1,58 @@
+.broadcastCard {
+  // transition: all ease-in-out 0.2s;
+  // padding: 0.3rem 0.8rem;
+  // cursor: pointer;
+  // border-radius: 0.8rem;
+
+  // &:hover {
+  //     background-color: rgb(250, 250, 250);
+  // }
+
+  &__imgCont {
+    width: 100%;
+    height: 17rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #bcbcbc;
+    border-radius: 0.8rem;
+
+    img {
+      // width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    color: black;
+    margin: 0.8rem 0rem;
+    font-size: $Font3;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @media (max-width: 901px) {
+      text-align: center;
+    }
+  }
+
+  &__describtion {
+    color: black;
+    font-size: $Font2;
+    font-weight: 400;
+    // white-space: nowrap;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    @media (max-width: 901px) {
+      text-align: center;
+      padding: 0 1rem;
+    }
+  }
+
+  button {
+    margin-top: 2rem;
+    width: 100%;
+  }
+}

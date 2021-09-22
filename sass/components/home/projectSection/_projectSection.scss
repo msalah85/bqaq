@@ -1,0 +1,33 @@
+.projectSection {
+  margin-top: 7rem;
+  margin-bottom: 5rem;
+  &__title {
+    color: #277f66;
+    font-size: 1.8rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__moreBtn {
+      color: #bcbcbc;
+      font-size: 1.5rem;
+      cursor: pointer;
+      &:hover {
+        text-shadow: 1px 1px 4px #dadada;
+      }
+    }
+  }
+
+  &__projectContainer {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 32%);
+    grid-gap: 2rem;
+    overflow: hidden;
+    @media (max-width: 901px) {
+      grid-template-columns: repeat(1, 100%);
+      grid-row-gap: 3rem;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.scientistPraise {
+  display: grid;
+  grid-template-columns: 20% 76%;
+  // grid-template-rows: 1fr;
+  grid-column-gap: 4%;
+  height: 100%;
+  margin-bottom: 2rem;
+  // &__sidebar {
+
+  // }
+
+  &__body {
+    margin-top: 6rem;
+  }
+}

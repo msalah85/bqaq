@@ -1,0 +1,83 @@
+.sidebarContainer {
+  position: sticky;
+  top: 1rem;
+  height: fit-content;
+  background-color: white;
+  border-radius: 3rem;
+  border: 1px solid #e1e1e1;
+  padding: 1rem 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 1 auto;
+  width: 20%;
+  min-width: 25rem;
+  margin-right: 1%;
+  &__title {
+    margin: 3rem 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  &__item {
+    border-radius: 2rem;
+    border: 1px solid #bcbcbc;
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #bcbcbc;
+    margin-bottom: 3rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: #e7efea;
+    }
+  }
+}
+.activeSideBarItem {
+  border: none;
+  background-color: #e7efea;
+  color: #195f30;
+}
+
+.whoWeAreBody {
+  width: 100%;
+  padding: 3rem;
+}
+
+.galleryContainer {
+  margin-top: 5rem;
+
+  .galleryTitle {
+    margin-top: 15rem;
+    font-size: 1.5rem;
+    font-weight: 600 !important;
+    color: #525252;
+    font-weight: 500;
+  }
+}
+
+.add-new-file {
+  margin-top: 10rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 3rem;
+  background-color: #195f30;
+  padding: 1.3rem;
+  width: fit-content;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: #2c864a;
+  }
+}
+
+.inp-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0.8rem 0;
+  align-self: flex-start;
+  color: #747474;
+}
