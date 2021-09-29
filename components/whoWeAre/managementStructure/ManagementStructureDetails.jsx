@@ -18,7 +18,7 @@ function ManagementStructureDetails(props) {
     )
 }
 const mapStateToProps = (state) => {
-    return { empolyees: state.whoWeAre?.containers?.whoWeAre?.administration };
+    return { empolyees: state.whoWeAre?.containers?.whoWeAre?.administration?.reverse() };
 };
 
 export default connect(mapStateToProps, {})(ManagementStructureDetails);

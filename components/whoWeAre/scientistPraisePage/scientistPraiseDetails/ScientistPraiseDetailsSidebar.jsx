@@ -6,7 +6,7 @@ import ShareWithSection from '../../../../reusable/shareWithSection/ShareWithSec
 export default function ScientistPraiseDetailsSidebar(props) {
     return (
         <div className='SP_DetailsSidebar'>
-            <Breadcrumbs breadcrumbs={[{ name: 'من نحن', url: '/who-we-are' }, { name: 'ثناء العلماء و الدعاة', url: '/who-we-are/scientist-praise' }]} />
+            <Breadcrumbs breadcrumbs={[{ name: 'من نحن', url: '/who-we-are' }, { name: 'قالوا عنا', url: '/who-we-are/scientist-praise' }]} />
 
             <div className='SP_DetailsSidebar__headBar'>
                 <div className='SP_DetailsSidebar__headBar__imgCont'>

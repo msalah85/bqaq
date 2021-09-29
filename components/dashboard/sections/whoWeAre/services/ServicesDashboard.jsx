@@ -44,7 +44,7 @@ export default function Services() {
         requester.get("/content/introduction/definition/get-definitions").then((response) => {
 
             setDataStatus(null);
-            setRecords(response.data.model?.filter(item => item.type == 1) || []);
+            setRecords(response.data.model?.reverse().filter(item => item.type == 1) || []);
         }).catch(() => {
             setRecords([]);
             setDataStatus('فشل الاتصال')

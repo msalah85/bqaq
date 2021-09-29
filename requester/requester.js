@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default axios.create({
     baseURL: 'https://ws.bqaiqdawah.org.sa/api/v1/',
-    // headers: { 'Authorization': `Bearer test@123` },
+    //* headers: { 'Authorization': `Bearer test@123` },
 });
 
 axios.interceptors.response.use(function (response) {

@@ -88,7 +88,7 @@ export default function OurProjectsDashboard() {
             {
                 caseToShow == 'add' ? <AddProject fetchTableData={fetchTableData} setCaseToShow={setCaseToShow} />
                     :
-                    caseToShow == 'update' ? <UpdateProject fetchTableData={fetchTableData} setCaseToShow={setCaseToShow} selectedProject={selectedProject} />
+                    caseToShow == 'update' ? <UpdateProject fetchTableData={fetchTableData} setCaseToShow={setCaseToShow} selectedProject={selectedProject} setSelectedProject={setSelectedProject} />
                         :
                         <div className='table-container' style={{ width: '100%', position: 'relative' }}>
                             {showLoadPanel && <Spinner />}

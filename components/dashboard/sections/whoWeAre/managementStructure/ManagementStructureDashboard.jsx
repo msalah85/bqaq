@@ -48,7 +48,7 @@ export default function ManagementStructureDashBaord() {
         requester.get("/content/administrative-structure/get-employees")
             .then((response) => {
                 setDataStatus(null);
-                setRecords(response.data.model);
+                setRecords(response.data.model?.reverse());
             }).catch(() => {
                 setRecords([]);
                 setDataStatus('فشل الاتصال')
@@ -70,11 +70,13 @@ export default function ManagementStructureDashBaord() {
                             fetchTableData();
                         })
                 } else {
+                    newImage = null;
                     Success();
                     fetchTableData();
                 }
 
             }).catch(() => {
+                newImage = null
                 Failed();
                 fetchTableData();
             })
@@ -85,7 +87,7 @@ export default function ManagementStructureDashBaord() {
         runLoadPanel();
 
         requester.put('/content/administrative-structure/update-employee', { ...e.data })
-            .then(() => {
+            .then((res) => {
                 if (newImage) {
                     let image = new FormData();
                     image.append("File", newImage, newImage.name);
@@ -100,7 +102,7 @@ export default function ManagementStructureDashBaord() {
                     Success();
                     fetchTableData();
                 }
-            }).catch(() => {
+            }).catch((e) => {
                 Failed();
                 fetchTableData();
             })

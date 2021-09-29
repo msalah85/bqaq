@@ -12,7 +12,7 @@ export default function SideBar() {
             </ActiveLink>
 
             <ActiveLink activeClassName='activeSideBarItem' href='/dashboard/sections/who-we-are/scientist-praise'>
-                <a className='sidebarContainer__item'>ثناء العلماء</a>
+                <a className='sidebarContainer__item'>قالوا عنا</a>
             </ActiveLink>
 
             <ActiveLink activeClassName='activeSideBarItem' href='/dashboard/sections/who-we-are/goals'>

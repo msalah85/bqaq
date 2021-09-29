@@ -18,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     border: 1px solid #bcbcbc;
     border-radius: 0.8rem;
 
@@ -44,6 +44,7 @@
     }
 
     &__description {
+      white-space: pre-wrap;
       margin-top: 0.5rem;
       font-size: $Font2;
       font-weight: 400;

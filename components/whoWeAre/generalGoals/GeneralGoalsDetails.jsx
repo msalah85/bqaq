@@ -208,7 +208,7 @@ function GeneralGoalsDetails(props) {
     )
 }
 const mapStateToProps = (state) => {
-    return { ourGoals: state.whoWeAre?.containers?.whoWeAre?.goals };
+    return { ourGoals: state.whoWeAre?.containers?.whoWeAre?.goals?.reverse() };
 };
 
 export default connect(mapStateToProps, {})(GeneralGoalsDetails);

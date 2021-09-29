@@ -45,7 +45,7 @@ export default function GoalsDashboard() {
         requester.get("/content/introduction/definition/get-definitions").then((response) => {
 
             setDataStatus(null);
-            setRecords(response.data.model?.filter(item => item.type == 3) || []);
+            setRecords(response.data.model?.reverse().filter(item => item.type == 3) || []);
         }).catch(() => {
             setRecords([]);
             setDataStatus('فشل الاتصال')

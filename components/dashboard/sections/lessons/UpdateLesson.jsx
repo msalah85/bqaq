@@ -59,7 +59,10 @@ export default function UpdateLesson(props) {
 
     }, [props.selectedLesson]);
 
-
+    useEffect(() => {
+        console.log('files', lessonFiles);
+    }, [lessonFiles])
+    
     const { register, getValues, reset, setValue, trigger, handleSubmit, formState: { errors }, } = useForm({
         mode: 'onBlur',
         defaultValues: {
@@ -140,8 +143,10 @@ export default function UpdateLesson(props) {
         if (e.target.files[0]) {
             let fileType = e.target.files[0] && e.target.files[0].type || '';
             if (fileType.includes('audio')) {
+                console.log('audio', e.target.files[0]);
                 setLessonAudio([...lessonAudio, e.target.files[0]]);
             } else {
+                console.log('else', e.target.files[0]);
                 setLessonFiles([...lessonFiles, e.target.files[0]]);
             }
         }
@@ -159,6 +164,24 @@ export default function UpdateLesson(props) {
         let newArray = [...bookmarks];
         newArray.push(newArray.length)
         setBookmarks([...newArray]);
+    }
+
+    const deleteMedia = (id) => {
+        setShowLoadPanel(true);
+
+        requester.delete(`/content/albums/delete?id=${id}`,).then((response) => {
+            requester.get(`/lessons/get-details?lessonId=${props.selectedLesson?.id}`).then((res) => {
+                setLessonDetails(res.data.model);
+                setShowLoadPanel(false);
+                Success();
+            }).catch(() => {
+                props.setCaseToShow('');
+            })
+
+        }).catch(() => {
+            setShowLoadPanel(false)
+            Failed();
+        })
     }
 
 
@@ -273,7 +296,7 @@ export default function UpdateLesson(props) {
 
 
 
-            {(lessonAudio.length > 0) || (lessonDetails?.media?.length > 0) && <>
+            {((lessonAudio.length > 0) || (lessonDetails?.media?.length > 0)) && <>
                 <div className='inp-title' style={{ marginTop: '8rem', fontSize: '1.8rem', fontWeight: '700' }}>الصوتيات</div>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     {
@@ -285,7 +308,7 @@ export default function UpdateLesson(props) {
                                         <source src={audio.url} type="audio/mpeg" />
                                         Your browser does not support the audio element.
                                     </audio>
-                                    <img src="/assets/delete.svg" style={{ width: '3rem', cursor: 'pointer' }} onClick={() => deleteAudio(index)} />
+                                    <img src="/assets/delete.svg" style={{ width: '3rem', cursor: 'pointer' }} onClick={() => deleteMedia(audio.id)} />
                                 </div>
 
                         })
@@ -306,29 +329,31 @@ export default function UpdateLesson(props) {
                 </div>
             </>}
 
-            {(lessonFiles.length > 0) || (lessonDetails?.media?.length > 0) && <>
-                <div className='inp-title' style={{ marginTop: '8rem', fontSize: '1.8rem', fontWeight: '700' }}>ملفات الدرس</div>
-                <List
-                    noDataText={' لا يوجد ملفات '}
-                    className='mt-2'
-                    items={lessonDetails?.media?.filter(file => file.type == 'Document')}
-                    displayExpr={'url'}
-                    height={'auto'}
-                    rtlEnabled
-                />
-                <List
-                    noDataText={' لا توجد ملفات مختاره حتي الان '}
-                    className='mt-2'
-                    items={lessonFiles}
-                    displayExpr={'name'}
-                    height={'auto'}
-                    allowItemDeleting
-                    itemDeleteMode='static'
-                    rtlEnabled
-                    onItemDeleted={(e) => { setLessonFiles([...lessonFiles]) }}
-                />
-            </>
-            }
+            <div className='inp-title' style={{ marginTop: '8rem', fontSize: '1.8rem', fontWeight: '700' }}>ملفات الدرس</div>
+
+            {/* {(lessonFiles.length > 0) || (lessonDetails?.media?.length > 0) && <> */}
+            <List
+                noDataText={' لا يوجد ملفات مرفوعه'}
+                className='mt-2'
+                items={lessonDetails?.media?.filter(file => file.type == 'Document')}
+                displayExpr={'url'}
+                height={'auto'}
+                rtlEnabled
+                allowItemDeleting
+                onItemDeleted={(e) => { deleteMedia(e.itemData.id); }}
+            />
+            <List
+                noDataText={' لا توجد ملفات مختاره حتي الان '}
+                className='mt-2'
+                items={lessonFiles}
+                displayExpr={'name'}
+                height={'auto'}
+                allowItemDeleting
+                itemDeleteMode='static'
+                rtlEnabled
+                onItemDeleted={(e) => { setLessonFiles([...lessonFiles]) }}
+            />
+
 
             <div>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>

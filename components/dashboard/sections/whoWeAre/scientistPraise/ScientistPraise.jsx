@@ -43,7 +43,7 @@ export default function ScientistPraiseDashboard() {
         <div className='whoWeAreBody' style={{ position: 'relative' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
 
-                <div className='section-title'>ثناء العلماء و الدعاة</div>
+                <div className='section-title'>قالوا عنا</div>
 
                 <div
                     className='add-new-file'
@@ -57,7 +57,7 @@ export default function ScientistPraiseDashboard() {
 
             </div>
 
-            { showLoadPanel && <Spinner />}
+            {showLoadPanel && <Spinner />}
 
             {
 

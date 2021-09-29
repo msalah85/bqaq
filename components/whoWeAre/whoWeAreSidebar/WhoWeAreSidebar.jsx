@@ -22,7 +22,7 @@ function WhoWeAreSidebar(props) {
                 </ActiveLink>
 
                 <ActiveLink activeClassName='activeSwitchBtn' href='/who-we-are/scientist-praise'>
-                    <a className='sidebar__switchBtn__btn ' style={{ borderRadius: '.8rem 0 0 .8rem' }}> ثناء العلماء و الدعاة </a>
+                    <a className='sidebar__switchBtn__btn ' style={{ borderRadius: '.8rem 0 0 .8rem' }}> قالوا عنا </a>
                 </ActiveLink>
 
             </div>}

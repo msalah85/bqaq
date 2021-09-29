@@ -121,6 +121,22 @@ export default function UpdateProject(props) {
         }
     };
 
+    const deleteMedia = (mediaUrl) => {
+        setShowLoadPanel(true);
+        let deleteImage = new FormData();
+        deleteImage.append("Id", props.selectedProject?.id);
+        deleteImage.append("MediaUrl", mediaUrl);
+
+        requester.patch(`/projects/remove-project-media`, deleteImage).then((response) => {
+            setShowLoadPanel(false)
+            props.setSelectedProject({ ...props.selectedProject, media: response.data.model?.media })
+            Success();
+        }).catch(() => {
+            setShowLoadPanel(false)
+            Failed();
+        })
+    }
+
     return (
         <form onSubmit={handleSubmit(onSubmit)} style={{ position: 'relative' }}>
             {showLoadPanel && <Spinner />}
@@ -189,7 +205,13 @@ export default function UpdateProject(props) {
                 {
                     props.selectedProject?.media?.images.map((image, index) => {
                         return <div className='whoWeAreDetails__left__section__gridCont__imgCont' key={index} style={{ position: 'relative' }}>
-
+                            <div
+                                className='popup__form__nav__closeBtn'
+                                style={{ position: 'absolute', top: '0', right: '0', background: 'grey', zIndex: '1', borderRadius: '0.5rem' }}
+                                onClick={() => deleteMedia(image)}
+                            >
+                                <img src="/assets/Mask Group 67.svg" />
+                            </div>
                             <img src={image} />
 
                         </div>
@@ -229,7 +251,13 @@ export default function UpdateProject(props) {
                 {
                     props.selectedProject?.media?.video?.map((video, index) => {
                         return <div className='whoWeAreDetails__left__section__gridCont__imgCont' key={index} style={{ position: 'relative' }}>
-
+                            <div
+                                className='popup__form__nav__closeBtn'
+                                style={{ position: 'absolute', top: '0', right: '0', background: 'grey', zIndex: '1', borderRadius: '0.5rem' }}
+                                onClick={() => deleteMedia(video)}
+                            >
+                                <img src="/assets/Mask Group 67.svg" />
+                            </div>
                             <ReactPlayer
                                 url={video}
                                 controls={true}

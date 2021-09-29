@@ -11,7 +11,7 @@ export default function Breadcrumbs(props) {
     // const router = useRouter();
     // let routesNameInArabic = {
     //     'who-we-are': 'من نخن',
-    //     'scientist-praise': 'ثناء العلماء و الدعاة'
+    //     'scientist-praise': 'قالوا عنا'
     // }
     // useEffect(async () => {
     //     await getAndFormatUrl()

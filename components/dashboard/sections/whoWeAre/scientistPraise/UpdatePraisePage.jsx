@@ -11,6 +11,7 @@ export default function UpdatePage(props) {
     const [showLoadPanel, setShowLoadPanel] = useState(false);
     const [praiseDetails, setPraiseDetails] = useState({});
     const [gallery, setGallery] = useState([]);
+    const [sheikhImage, setSheikhImage] = useState(null);
 
     useEffect(async () => {
         if (props.selectedScientistPraise) {
@@ -49,7 +50,15 @@ export default function UpdatePage(props) {
                         return requester.patch('/praises/upload-praise-media', newImageFormData)
                     })
 
-                    axios.all([...imagesUpload]).then(axios.spread((...responses) => {
+                    if (sheikhImage) {
+                        let sheikhImageFormData = new FormData();
+                        sheikhImageFormData.append("PraiseId", praiseDetails.id);
+                        sheikhImageFormData.append("File", sheikhImage);
+
+                        var sheikhImageUpload = requester.patch(`/praises/change-or-remove-avatar`, sheikhImageFormData)
+                    }
+
+                    axios.all([...imagesUpload, sheikhImageUpload]).then(axios.spread((...responses) => {
                         Success();
                         props.setCaseToShow('');
                         props.fetchPraiseData()
@@ -58,12 +67,28 @@ export default function UpdatePage(props) {
                         props.setCaseToShow('');
                         props.fetchPraiseData()
                     })
-                } else {
-                    console.log('added');
-                    Success();
-                    props.setCaseToShow('');
-                    props.fetchPraiseData();
                 }
+                else {
+                    if (sheikhImage) {
+                        let sheikhImageFormData = new FormData();
+                        sheikhImageFormData.append("PraiseId", praiseDetails.id);
+                        sheikhImageFormData.append("File", sheikhImage);
+
+                        requester.patch(`/praises/change-or-remove-avatar`, sheikhImageFormData).then(() => {
+                            Success();
+                            props.setCaseToShow('');
+                            props.fetchPraiseData();
+                        })
+                    }
+                    else {
+                        console.log('added');
+                        Success();
+                        props.setCaseToShow('');
+                        props.fetchPraiseData();
+                    }
+                }
+
+
             })
             .catch(() => {
                 setShowLoadPanel(false);
@@ -86,6 +111,40 @@ export default function UpdatePage(props) {
             images.splice(index, 1);
             setGallery([...images])
         }
+    }
+
+    const deleteAvatar = () => {
+        setShowLoadPanel(true)
+        let deleteImage = new FormData();
+        deleteImage.append("PraiseId", praiseDetails.id);
+        requester.patch(`/praises/change-or-remove-avatar`, deleteImage).then((response) => {
+            setShowLoadPanel(false)
+            setPraiseDetails({ ...praiseDetails, sheikhImage: null })
+            Success();
+        }).catch(() => {
+            setShowLoadPanel(false)
+            Failed();
+        })
+    }
+
+    const onAvatarChange = async (e) => {
+        setSheikhImage(e.target.files[0] || null)
+    }
+
+    const deleteMedia = (mediaUrl) => {
+        setShowLoadPanel(true);
+        let deleteImage = new FormData();
+        deleteImage.append("Id", praiseDetails.id);
+        deleteImage.append("MediaUrl", mediaUrl);
+
+        requester.patch(`/praises/remove-praise-media`, deleteImage).then((response) => {
+            setShowLoadPanel(false)
+            setPraiseDetails({ ...praiseDetails, media: response.data?.model?.media })
+            Success();
+        }).catch(() => {
+            setShowLoadPanel(false)
+            Failed();
+        })
     }
 
     return (
@@ -126,8 +185,15 @@ export default function UpdatePage(props) {
 
             <input id={"shiekhImage"} type="file" hidden onChange={onFileChange} accept="image/*" /> */}
 
-            <div className='dashBoardImgCont'>
-                <Gallery>
+            <div className='dashBoardImgCont' style={{ position: 'relative' }}>
+                {praiseDetails?.sheikhImage && <div
+                    className='popup__form__nav__closeBtn'
+                    style={{ position: 'absolute', top: '0', right: '0', background: 'grey', zIndex: '1', borderRadius: '0.5rem' }}
+                    onClick={() => deleteAvatar()}
+                >
+                    <img src="/assets/Mask Group 67.svg" />
+                </div>}
+                {praiseDetails?.sheikhImage ? <Gallery>
                     <Item
                         original={praiseDetails?.sheikhImage}
                         thumbnail={praiseDetails?.sheikhImage}
@@ -138,7 +204,17 @@ export default function UpdatePage(props) {
                             <img ref={ref} onClick={open} src={praiseDetails?.sheikhImage} onError={e => { e.target.src = "/assets/fallbacks/news-fallback-image.png" }} />
                         )}
                     </Item>
-                </Gallery>
+                </Gallery> :
+                    <>
+                        <label htmlFor='shiekhImage' className='dashBoardImgCont' style={{ cursor: 'pointer' }}>
+                            {
+                                sheikhImage ? <img src={URL.createObjectURL(sheikhImage)} /> : <img src={"/assets/plus.svg"} style={{ width: '4rem' }} />
+                            }
+                        </label>
+
+                        <input id={"shiekhImage"} type="file" hidden onChange={(e) => { FileSizeValidator(e, onAvatarChange) }} accept="image/*" />
+                    </>
+                }
             </div>
 
             <div className='inp-title'>معرض الصور</div>
@@ -146,6 +222,13 @@ export default function UpdatePage(props) {
                 {
                     praiseDetails?.media?.images.map((image, index) => {
                         return <div key={index} className='dashBoardImgCont' style={{ position: 'relative' }}>
+                            <div
+                                className='popup__form__nav__closeBtn'
+                                style={{ position: 'absolute', top: '0', right: '0', background: 'grey', zIndex: '1', borderRadius: '0.5rem' }}
+                                onClick={() => deleteMedia(image)}
+                            >
+                                <img src="/assets/Mask Group 67.svg" />
+                            </div>
                             <Gallery>
                                 <Item
                                     original={image}

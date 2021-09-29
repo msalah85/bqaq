@@ -282,6 +282,7 @@ export default function AddLesson(props) {
                 />
             </>
             }
+
             <div>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <label htmlFor='input-file-upload' className='add-new-file'>إضافة ملف صوتي او ملف (PDF/WORD)</label>

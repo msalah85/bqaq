@@ -47,7 +47,7 @@ export default function WhoWeAreDashboard() {
         requester.get("/content/introduction/definition/get-definitions").then((response) => {
 
             setDataStatus(null);
-            setRecords(response.data.model?.filter(item => item.type == 2) || []);
+            setRecords(response.data.model?.reverse().filter(item => item.type == 2) || []);
         }).catch(() => {
             setRecords([]);
             setDataStatus('فشل الاتصال')

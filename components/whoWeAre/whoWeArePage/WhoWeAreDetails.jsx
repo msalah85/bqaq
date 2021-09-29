@@ -19,7 +19,7 @@ export default function WhoWeAreDetails(props) {
                     })
                 }
 
-                {props.whoWeAreData?.containers?.whoWeAre?.definition?.map((item, index) => {
+                {props.whoWeAreData?.containers?.whoWeAre?.definition?.reverse()?.map((item, index) => {
                     return (
                         <Fragment key={index}>
                             <div className='whoWeAreDetails__right__title'>{item.definition}</div>

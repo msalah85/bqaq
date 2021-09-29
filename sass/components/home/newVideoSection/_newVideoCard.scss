@@ -36,6 +36,7 @@
   }
 
   &__describtion {
+    white-space: pre-wrap;
     color: black;
     margin-bottom: 1.8rem;
     font-size: $Font1;

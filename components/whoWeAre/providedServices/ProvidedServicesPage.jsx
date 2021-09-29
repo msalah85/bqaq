@@ -19,7 +19,7 @@ function ProvidedServices(props) {
     )
 }
 const mapStateToProps = (state) => {
-    return { ProvidedServices: state.whoWeAre?.containers?.whoWeAre?.service };
+    return { ProvidedServices: state.whoWeAre?.containers?.whoWeAre?.service?.reverse() };
 };
 
 export default connect(mapStateToProps, {})(ProvidedServices);

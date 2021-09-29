@@ -20,6 +20,7 @@
     }
 
     &__desc {
+      white-space: pre-wrap;
       font-size: $Font2;
       line-height: 2;
       text-align: justify;
