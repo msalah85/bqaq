@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+@font-face {
+  font-family: "Alarabiya";
+  src: url("./Alarabiya\ Font\ Normal.ttf") format("opentype");
+  unicode-range: "U+0-10FFFF";
+}
 
 *,
 *::after,
@@ -49,7 +54,7 @@ html {
 
 body {
   position: relative;
-  font-family: "Tajawal", sans-serif;
+  font-family: "Alarabiya", sans-serif;
   /* font-size: 16px; */
   line-height: 1.7;
   // letter-spacing: 1px;
@@ -77,12 +82,12 @@ body {
 }
 
 input {
-  font-family: "Tajawal", sans-serif;
+  font-family: "Alarabiya", sans-serif;
   /* font-size: 16px; */
 }
 
 button {
-  font-family: "Tajawal", sans-serif;
+  font-family: "Alarabiya", sans-serif;
   /* font-size: 16px; */
 }
 

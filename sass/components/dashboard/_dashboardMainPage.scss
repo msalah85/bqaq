@@ -60,7 +60,7 @@
 }
 
 .section-title {
-  font-size: 1.5rem;
+  font-size: $Font1;
   font-weight: bold;
 }
 
@@ -102,14 +102,14 @@
   border-radius: 0.5rem;
   width: 7rem;
   height: 7rem;
-  font-size: 1.4rem;
+  font-size: $Font1;
   overflow: hidden;
   position: relative;
   margin: auto;
-    .dashboard-img {
-      max-width: 100%;
-      max-height: 100%;
-    }
+  .dashboard-img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 
 .dashboard-edit-img-cont {
@@ -123,10 +123,10 @@
   border-radius: 0.5rem;
   width: 15rem;
   height: 15rem;
-  font-size: 1.4rem;
+  font-size: $Font1;
   overflow: hidden;
   position: relative;
-  margin-top:2rem;
+  margin-top: 2rem;
   .dashboard-img-cont-overlay {
     position: absolute;
     height: 100%;

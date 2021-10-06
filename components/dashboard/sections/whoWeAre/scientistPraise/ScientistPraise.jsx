@@ -4,6 +4,7 @@ import ScientistPraiseCard from '../../../../whoWeAre/scientistPraisePage/Scient
 import AddPage from './AddPraisePage';
 import Spinner from '../../../../../reusable/spinner/Spinner';
 import UpdatePage from './UpdatePraisePage';
+import { Failed, Success } from '../../../alertPopup/AlertPopup';
 
 export default function ScientistPraiseDashboard() {
     const [scientistPraise, setScientistPraise] = useState([]);
@@ -39,6 +40,18 @@ export default function ScientistPraiseDashboard() {
         })
     }
 
+    const deletePraise = (id) => {
+        runLoadPanel(true);
+
+
+        requester.delete(`/praises/delete-praise?praiseId=${id}`,).then(() => {
+            fetchPraiseData()
+            Success();
+        }).catch(() => {
+
+            Failed();
+        })
+    }
     return (
         <div className='whoWeAreBody' style={{ position: 'relative' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -69,8 +82,17 @@ export default function ScientistPraiseDashboard() {
                         :
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gridTemplateRows: '1fr', gridGap: '1.5rem', marginTop: '5rem' }}>
                             {scientistPraise?.map((item, index) => {
-                                return <div key={index} style={{ cursor: 'pointer' }} onClick={() => { setCaseToShow('update'); setSelectedScientistPraise(item) }}>
-                                    <ScientistPraiseCard data={item} dashboardCard={true} />
+                                return <div style={{ position: 'relative' }}>
+                                    <div key={index} style={{ cursor: 'pointer' }} onClick={() => { setCaseToShow('update'); setSelectedScientistPraise(item) }}>
+                                        <ScientistPraiseCard data={item} dashboardCard={true} />
+                                    </div>
+                                    <div
+                                        className='popup__form__nav__closeBtn'
+                                        style={{ position: 'absolute', top: '0', left: '50px', background: 'grey', zIndex: '1', borderRadius: '0.5rem' }}
+                                        onClick={() => deletePraise(item.id)}
+                                    >
+                                        <img src="/assets/Mask Group 67.svg" />
+                                    </div>
                                 </div>
                             })}
                         </div>

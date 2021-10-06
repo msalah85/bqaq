@@ -4,10 +4,7 @@ import requester from '../../../requester/requester';
 export const GET_BANNERS = () => {
     return async function (dispatch) {
 
-        dispatch({
-            type: Types.TOGGLE_SPINNER,
-            payload: true,
-        })
+
         await requester
             .get(`/content/banners/get-banners?selectUnActive=true`)
             .then((response) => {

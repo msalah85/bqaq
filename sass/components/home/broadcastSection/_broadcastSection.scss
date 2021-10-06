@@ -2,14 +2,14 @@
   margin-bottom: 6rem;
   &__title {
     color: #277f66;
-    font-size: 1.8rem;
+    font-size: $Font3;
     font-weight: 500;
     display: flex;
     justify-content: space-between;
     align-items: center;
     &__moreBtn {
       color: #bcbcbc;
-      font-size: 1.5rem;
+      font-size: $Font3;
       cursor: pointer;
       &:hover {
         text-shadow: 1px 1px 4px #dadada;

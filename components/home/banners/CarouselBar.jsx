@@ -3,6 +3,7 @@ import Carousel from 'react-multi-carousel'
 import { GET_BANNERS } from '../../../redux/actions/home/index';
 import { connect } from 'react-redux';
 import ReactPlayer from 'react-player';
+import ReactImageFallback from 'react-image-fallback';
 
 function CarouselBar(props) {
     const [autoPlay, setAutoPlay] = useState(false);
@@ -34,7 +35,7 @@ function CarouselBar(props) {
 
     return (
         <>
-            {(true || props.banners) && <div className='carousel'>
+            {props.banners && <div className='carousel'>
 
                 <Carousel
                     swipeable
@@ -51,24 +52,34 @@ function CarouselBar(props) {
                     arrows={true}
                     beforeChange={(e) => { setVideoPlay(false) }}
                 >
-                    {/* {props.banners?.map(banner => {
-                        return <div className='carousel__item'>
-                            <ReactImageFallback
-                                src={banner.bannerUrl}
-                                fallbackImage='./assets/Banner.jpg'
-                                draggable={false}
-                            />
-                            <div className='carousel__item__describtion'>
-                                <div className='four-lines'>{banner.bannerDescription}</div>
-                                <a target="_blank" href={banner.targetUrl} className='baqiq-gold-btn'>
-                                    المزيد <span >›</span>
-                                </a>
-
+                    {props.banners?.map(banner => {
+                        if (banner.mediaType === 1)
+                            return <div className='carousel__item'>
+                                <ReactImageFallback
+                                    src={banner.bannerUrl}
+                                    fallbackImage='./assets/Banner.jpg'
+                                    draggable={false}
+                                />
                             </div>
-                        </div>
-                    })} */}
+                        else if (banner.mediaType === 2)
+                            return <div className='carousel__item' >
+                                <ReactPlayer
+                                    url={banner.bannerUrl}
+                                    playing={videoPlay}
+                                    controls={true}
+                                    volume={1}
+                                    muted={false}
+                                    width='100%'
+                                    height='100%'
+                                    style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                                    onEnded={() => { setAutoPlay(true) }}
+                                    onPause={() => { setAutoPlay(true) }}
+                                    onPlay={() => { setAutoPlay(false) }}
+                                />
+                            </div>
+                    })}
 
-                    <div className='carousel__item' style={{ height: '100%' }}>
+                    {/* <div className='carousel__item' style={{ height: '100%' }}>
                         <ReactPlayer
                             url={'https://www.youtube.com/watch?v=NlEa9-xZZTY&ab_channel=%D8%B1%D9%88%D8%A7%D8%A6%D8%B9%D8%A7%D9%84%D9%83%D9%84%D9%85'}
                             playing={videoPlay}
@@ -91,7 +102,7 @@ function CarouselBar(props) {
 
                     <div className='carousel__item'>
                         <img src='/assets/Banner.jpg' width='100%' height='100%' draggable={false} />
-                    </div>
+                    </div> */}
 
                 </Carousel>
 

@@ -15,14 +15,14 @@ import DataGrid, {
 
 } from 'devextreme-react/data-grid';
 import 'devextreme-react/text-area';
-
+import { Button, TextBox } from "devextreme-react/text-box";
+import List from 'devextreme-react/list';
 import { Item } from 'devextreme-react/form';
 
 import { Failed, Success } from "../../alertPopup/AlertPopup";
 import requester from '../../../../requester/requester';
 import Spinner from '../../../../reusable/spinner/Spinner';
 import ReactImageFallback from 'react-image-fallback';
-import axios from 'axios';
 import { FileSizeValidator } from '../../../../utils/FileSizeValidator';
 
 export default function BannersDashboard() {
@@ -30,6 +30,7 @@ export default function BannersDashboard() {
     const [records, setRecords] = useState([]);
     const [showLoadPanel, setShowLoadPanel] = useState(false);
     const [dataStatus, setDataStatus] = useState(null);
+    const [newAdv, setNewAdv] = useState('');
     var newImage = null;
 
     useEffect(() => {
@@ -214,6 +215,25 @@ export default function BannersDashboard() {
         }
     }
 
+    const addButton = {
+        text: 'اضف',
+        onClick: () => {
+            runLoadPanel();
+            requester.post('/content/banners/create-new-banner-url', {
+                "url": newAdv,
+                "mediaType": 2
+            }).then(() => {
+                setNewAdv(null)
+                Success();
+                fetchTableData();
+
+            }).catch(() => {
+                Failed();
+                fetchTableData();
+
+            })
+        }
+    };
     return (
         <div className='whoWeAreBody'>
             <div className='section-title'>الصفحة الرئيسية</div>
@@ -222,7 +242,7 @@ export default function BannersDashboard() {
                 {showLoadPanel && <Spinner />}
                 <DataGrid
                     noDataText={dataStatus || 'لا توجد بيانات'}
-                    dataSource={records}
+                    dataSource={records.filter(e => e.mediaType === 1)}
                     allowColumnReordering={true}
                     allowColumnResizing={true}
                     showBorders={true}
@@ -305,6 +325,27 @@ export default function BannersDashboard() {
                     <Column dataField="bannerName" alignment={"center"} caption='العنوان' />
 
                 </DataGrid>
+
+                <List
+                    noDataText={'لا يوجد روابط'}
+                    className='mt-2'
+                    items={records.filter(e => e.mediaType === 2)}
+                    height={'auto'}
+                    allowItemDeleting
+                    onItemDeleted={(e) => { onRowRemoved({ data: { ...e.itemData } }) }}
+                    itemDeleteMode='static'
+                    rtlEnabled
+                    displayExpr={'bannerUrl'}
+                />
+                <TextBox value={newAdv} onValueChanged={(e) => { setNewAdv(e.value) }} placeholder='اضف رابط ' rtlEnabled>
+
+                    <Button
+                        name="Add"
+                        location="after"
+                        options={addButton}
+                    />
+
+                </TextBox>
             </div >
 
         </div >

@@ -21,22 +21,22 @@
     }
   }
   &__title {
-    font-size: 1.6rem;
+    font-size: $Font2;
     font-weight: 600;
   }
   &__subtitle {
     color: #505050;
-    font-size: 1.4rem;
+    font-size: $Font1;
     font-weight: 500;
   }
   &__graySubtitle {
     color: #959595;
-    font-size: 1.4rem;
+    font-size: $Font1;
     font-weight: 500;
   }
   &__greenSubtitle {
     color: #277f66;
-    font-size: 1.4rem;
+    font-size: $Font1;
     font-weight: 500;
   }
   @media (max-width: 901px) {
