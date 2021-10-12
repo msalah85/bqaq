@@ -327,7 +327,7 @@ export default function BookstoreDashboard() {
                                 <RequiredRule message="المؤلف مطلوب" />
                             </Item>
 
-                            <Item dataField="price">
+                            <Item dataField="price" itemType='Number'>
                                 <RequiredRule message=" السعر مطلوب" />
                             </Item>
 
@@ -361,7 +361,7 @@ export default function BookstoreDashboard() {
 
                     <Column dataField="author" alignment={"center"} caption='مؤلف الكتاب' />
 
-                    <Column dataField="price" alignment={"center"} caption='سعر الكتاب' />
+                    <Column dataField="price" dataType="number" alignment={"center"} caption='سعر الكتاب' />
 
                     <Column dataField="documentUrl" caption='رابط الكتاب' visible={false} />
 
