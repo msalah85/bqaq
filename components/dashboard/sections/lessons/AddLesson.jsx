@@ -40,7 +40,7 @@ export default function AddLesson(props) {
         }))
     }, []);
 
-    const { register, getValues, setValue, trigger, handleSubmit, formState: { errors }, } = useForm({
+    const { register, getValues, reset, setValue, trigger, handleSubmit, formState: { errors }, } = useForm({
         mode: 'onBlur',
         defaultValues: {
             advantages: []
@@ -105,12 +105,10 @@ export default function AddLesson(props) {
     };
 
     const onSubmit = (data) => {
-        console.log('onSubmit', data);
         addNewRecord(data);
     };
 
     const onFileChange = async (e) => {
-        console.log(e.target.files[0]);
         if (e.target.files[0]) {
             let fileType = e.target.files[0] && e.target.files[0].type || '';
             if (fileType.includes('audio')) {
@@ -136,12 +134,20 @@ export default function AddLesson(props) {
     }
 
 
+    const removeBookmark = (index) => {
+        const oldValue = getValues();
+        const newValue = {...oldValue};
+        let newArray = [...newValue.tenor.bookmarks];
+        newArray.splice(index, 1);
+        newValue.tenor.bookmarks = newArray;
+        reset(newValue);
+        const cccc = getValues();
+        setBookmarks([...newArray]);
+    }
+
     return (
         <form onSubmit={handleSubmit(onSubmit)} style={{ position: 'relative' }}>
             {showLoadPanel && <Spinner />}
-
-
-
             <div className='inp-title'>عنوان الدرس</div>
             <input
                 className={`baqiq-inp ${errors.title && 'unvalid'}`}
@@ -177,9 +183,6 @@ export default function AddLesson(props) {
                 onValueChange={(value) => { setValue('languageId', value); }}
             />
 
-
-
-
             <div className='inp-title'>تصنيف الدرس</div>
             <SelectBox
                 rtlEnabled
@@ -191,8 +194,6 @@ export default function AddLesson(props) {
                 placeholder="تصنيف الدرس"
                 onValueChange={(value) => { setValue('tagId', value); }}
             />
-
-
 
 
             <div className='inp-title'>عدد الاجزاء</div>
@@ -216,8 +217,12 @@ export default function AddLesson(props) {
             {
                 bookmarks.map((bookmark, index) => {
                     return (
-                        <>
-
+                        <div className='bookmark-card' key={index}>
+                            <div onClick={() => removeBookmark(index)}
+                                 className="dx-list-static-delete-button dx-button dx-button-normal dx-button-mode-contained dx-widget dx-rtl dx-button-has-icon"
+                                 aria-label="remove" role="button">
+                                <div className="dx-button-content"><i className="dx-icon dx-icon-remove"></i></div>
+                            </div>
                             <div className='inp-title'>عنوان الفقره</div>
 
                             <input
@@ -237,7 +242,7 @@ export default function AddLesson(props) {
                                 style={{ width: '100%', resize: 'vertical', maxHeight: '25rem', minHeight: '5rem', height: '10rem', borderRadius: '3rem', padding: '1.2rem', transition: 'none' }}
                             />
 
-                        </>
+                        </div>
                     )
                 })
             }

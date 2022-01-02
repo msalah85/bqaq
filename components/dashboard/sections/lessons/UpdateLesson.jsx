@@ -48,19 +48,17 @@ export default function UpdateLesson(props) {
                     setTags(responses[1].data.model);
                     setSheikhs(responses[2].data.model);
                     setLessonDetails(responses[3].data.model);
-                    setBookmarks(responses[3].data.model?.tenor?.bookmarks || [])
+                    setBookmarks([...responses[3].data.model?.tenor?.bookmarks || []])
                     reset(responses[3].data.model);
 
                 }))
                 .catch((err) => {
-                    console.log(err);
                 })
         }
 
     }, [props.selectedLesson]);
 
     useEffect(() => {
-        console.log('files', lessonFiles);
     }, [lessonFiles])
     
     const { register, getValues, reset, setValue, trigger, handleSubmit, formState: { errors }, } = useForm({
@@ -72,6 +70,7 @@ export default function UpdateLesson(props) {
 
     const updateRecord = (data) => {
         setShowLoadPanel(true);
+        data.tenor['Content'] = 'test';
         requester.put(`/lessons/update`, {
             ...data,
             audioUrl: undefined,
@@ -134,19 +133,15 @@ export default function UpdateLesson(props) {
     };
 
     const onSubmit = (data) => {
-        console.log('onSubmit', data);
         updateRecord(data);
     };
 
     const onFileChange = async (e) => {
-        console.log(e.target.files[0]);
         if (e.target.files[0]) {
             let fileType = e.target.files[0] && e.target.files[0].type || '';
             if (fileType.includes('audio')) {
-                console.log('audio', e.target.files[0]);
                 setLessonAudio([...lessonAudio, e.target.files[0]]);
             } else {
-                console.log('else', e.target.files[0]);
                 setLessonFiles([...lessonFiles, e.target.files[0]]);
             }
         }
@@ -163,6 +158,15 @@ export default function UpdateLesson(props) {
     const addNewBookmark = () => {
         let newArray = [...bookmarks];
         newArray.push(newArray.length)
+        setBookmarks([...newArray]);
+    }
+
+    const removeBookmark = (index) => {
+        let newArray = [...bookmarks];
+        newArray.splice(index, 1);
+        lessonDetails.tenor.bookmarks = newArray;
+        setLessonDetails(lessonDetails);
+        reset(lessonDetails);
         setBookmarks([...newArray]);
     }
 
@@ -201,7 +205,6 @@ export default function UpdateLesson(props) {
             />
 
             <div className='inp-title'>أسم الشيخ</div>
-            {console.log('render')}
             <SelectBox
                 rtlEnabled
                 searchEnabled
@@ -253,20 +256,15 @@ export default function UpdateLesson(props) {
 
             />
 
-
-            <div className='inp-title'>المقدمه</div>
-            <textarea
-                className={`baqiq-inp ${errors.tenor?.content && 'unvalid'}`}
-                {...register('tenor.content', { required: true })}
-                placeholder='المقدمه'
-                style={{ width: '100%', resize: 'vertical', maxHeight: '25rem', minHeight: '5rem', height: '10rem', borderRadius: '3rem', padding: '1.2rem', transition: 'none' }}
-            />
-
             {
                 bookmarks.map((bookmark, index) => {
                     return (
-                        <>
-
+                        <div className='bookmark-card' key={index}>
+                            <div onClick={() => removeBookmark(index)}
+                                className="dx-list-static-delete-button dx-button dx-button-normal dx-button-mode-contained dx-widget dx-rtl dx-button-has-icon"
+                                aria-label="remove" role="button">
+                                <div className="dx-button-content"><i className="dx-icon dx-icon-remove"></i></div>
+                            </div>
                             <div className='inp-title'>عنوان الفقره</div>
 
                             <input
@@ -286,7 +284,7 @@ export default function UpdateLesson(props) {
                                 style={{ width: '100%', resize: 'vertical', maxHeight: '25rem', minHeight: '5rem', height: '10rem', borderRadius: '3rem', padding: '1.2rem', transition: 'none' }}
                             />
 
-                        </>
+                        </div>
                     )
                 })
             }
@@ -330,8 +328,6 @@ export default function UpdateLesson(props) {
             </>}
 
             <div className='inp-title' style={{ marginTop: '8rem', fontSize: '1.8rem', fontWeight: '700' }}>ملفات الدرس</div>
-
-            {/* {(lessonFiles.length > 0) || (lessonDetails?.media?.length > 0) && <> */}
             <List
                 noDataText={' لا يوجد ملفات مرفوعه'}
                 className='mt-2'

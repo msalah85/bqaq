@@ -74,10 +74,38 @@
   }
 }
 
+.add-new-sub-file {
+  margin-top: 5rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 3rem;
+  background-color: #195f30;
+  padding: 1.3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+&:hover {
+    background-color: #2c864a;
+  }
+}
+
 .inp-title {
   font-size: $Font1;
   font-weight: 500;
   margin: 0.8rem 0;
   align-self: flex-start;
   color: #747474;
+}
+
+.bookmark-card {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
+  min-height: 200px;
+  margin: 100px auto;
+  border-radius: 5px;
+  padding: 10px;
 }
